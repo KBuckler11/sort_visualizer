@@ -8,6 +8,7 @@ import time
 class SortingVisualizer:
     def __init__(self, master):
         # control panel
+        self.merge_count = None
         self.master = master
         self.master.title("Sorting Algorithm Visualizer")
         self.master.resizable(width=0, height=0)
@@ -397,9 +398,11 @@ class SortingVisualizer:
     def pancake_sort(self):
         self.comparison_count = 0
         self.swap_count = 0
+        self.merge_count = 0
         # Reset counters and labels
         self.comparison_label.config(text="Comparisons: 0")
         self.swap_label.config(text="Swaps: 0")
+        self.merge_label.config(text="Merges: 0")
 
         N = self.array_size_var.get()
         arr = np.linspace(5, 395, N, dtype=int)
